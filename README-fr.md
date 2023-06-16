@@ -1,5 +1,7 @@
 # Inscriptum Blog 
 
+![Inscriptum Logo](/brand/logo_white_background.png "Inscriptum Logo")
+
 Inscriptum est un blog open-source où toute personne peut venir et partager du contenu.
 
 Ce dépôt Github contient toute la base de code du projet.
