@@ -1,0 +1,12 @@
+{
+  "env": {
+    "node": true
+  },
+  "plugins": ["security", "react"],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "ecmaFeatures": { "jsx": true },
+    "sourceType": "module"
+  },
+  "extends": ["eslint:recommended", "plugin:security/recommended"]
+}

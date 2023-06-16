@@ -1,0 +1,9 @@
+@import url('https://fonts.cdnfonts.com/css/libre-baskerville');
+@import url('https://fonts.cdnfonts.com/css/open-sans');
+
+:root {
+  --primary-font-family: 'Open Sans', sans-serif;
+  --secondary-font-family: 'Libre Baskerville', 'sans-serif';
+  --primary-color: #000;
+}
+
