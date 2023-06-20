@@ -8,7 +8,7 @@
  */
 
 import './DefaultLayout.css';
-import { Header } from 'components/DefaultLayoutComponent';
+import Header from 'components/DefaultLayoutComponent/Header';
 import { VStack, Flex, Center } from '@chakra-ui/react';
 import { Outlet } from 'react-router-dom';
 
@@ -24,7 +24,3 @@ export default function DefaultLayout() {
     </VStack>
   );
 }
-
-
-
-

@@ -1,8 +1,12 @@
-import DefaultLayout from '../layouts/DefaultLayout/DefaultLayout';
-import AdminLayout from '../layouts/AdminLayout/AdminLayout';
+import DefaultLayout from 'layouts/DefaultLayout';
+import AdminLayout from 'layouts/AdminLayout';
 
-import { Home, Tags, About } from 'pages/DefaultLayoutPages';
-import { Dashboard } from 'pages/AdminLayoutPage';
+import Home from 'pages/DefaultLayoutPages/Home';
+import Tags from 'pages/DefaultLayoutPages/Tags';
+import About from 'pages/DefaultLayoutPages/About';
+
+// console.log(Tags);
+import Dashboard from 'pages/AdminLayoutPage/Dashboard';
 
 const siteConfig = {
   name: 'Inscriptum',
@@ -56,27 +60,4 @@ const routesConfig = [
   },
 ];
 
-const menuConfig = {
-  navLinks: [
-    {
-      id: 1,
-      name: 'Home',
-      icon: '',
-      path: '/',
-    },
-    {
-      id: 2,
-      name: 'Tags',
-      icon: '',
-      path: '/tags',
-    },
-    {
-      id: 3,
-      name: 'About',
-      icon: '',
-      path: '/about',
-    },
-  ],
-};
-
-export { siteConfig, menuConfig, routesConfig };
+export { siteConfig, routesConfig };

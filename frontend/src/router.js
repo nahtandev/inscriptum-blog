@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { createBrowserRouter } from 'react-router-dom';
-import { DefaultLayoutErrorPage } from 'pages/DefaultLayoutPages';
-import { routesConfig } from './config';
+import DefaultLayoutErrorPage from 'pages/DefaultLayoutPages/Error';
+import { routesConfig } from 'config';
 
 let routes = [];
 

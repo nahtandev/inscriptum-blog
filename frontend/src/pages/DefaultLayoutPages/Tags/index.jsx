@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { Box } from '@chakra-ui/react';
 
-export default function Home() {
+function Tags() {
   return (
     <Box
       display={'flex'}
@@ -9,7 +9,9 @@ export default function Home() {
       alignItems={'center'}
       width={'100%'}
     >
-      This is Home Page. You're Welcome 😎😁
+      This is Tags Page. Please comme back to see new contents 😉😉
     </Box>
   );
 }
+
+export { Tags as default };

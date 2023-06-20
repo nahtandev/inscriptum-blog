@@ -8,7 +8,9 @@
  */
 
 import './Header.css';
-import { CustomButton, Logo, SearchBar } from '../../common';
+import Logo from 'components/common/Logo';
+import CustomButton from 'components/common/CustomButton';
+import SearchBar from 'components/common/SearchBar';
 import {
   Box,
   Flex,
@@ -30,7 +32,6 @@ import {
 import { HamburgerIcon, ChevronRightIcon, CloseIcon } from '@chakra-ui/icons';
 import { Link as ReactRouterLink } from 'react-router-dom';
 import { useRef } from 'react';
-import { menuConfig } from 'config';
 import { routesConfig } from '../../../config';
 
 function SiteHeader() {
