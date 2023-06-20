@@ -8,7 +8,7 @@
  */
 
 import './Header.css';
-import { CustomButton, Logo, SearchBar } from '../../components';
+import { CustomButton, Logo, SearchBar } from '../../common';
 import {
   Box,
   Flex,
@@ -28,10 +28,13 @@ import {
   LinkOverlay,
 } from '@chakra-ui/react';
 import { HamburgerIcon, ChevronRightIcon, CloseIcon } from '@chakra-ui/icons';
+import { Link as ReactRouterLink } from 'react-router-dom';
 import { useRef } from 'react';
 import { menuConfig } from 'config';
+import { routesConfig } from '../../../config';
 
-export default function SiteHeader() {
+function SiteHeader() {
+  const DefaultLayout = routesConfig[0];
   const { isOpen, onOpen, onClose } = useDisclosure({});
   const btnRef = useRef();
 
@@ -54,8 +57,13 @@ export default function SiteHeader() {
               alignItems="center"
               height="100%"
             >
-              {menuConfig.navLinks.map((link) => (
-                <Link key={link.id} className="nav-link" href={link.path}>
+              {DefaultLayout.pages.map((link) => (
+                <Link
+                  key={link.id}
+                  className="nav-link"
+                  as={ReactRouterLink}
+                  to={link.path}
+                >
                   {link.name}
                 </Link>
               ))}
@@ -123,8 +131,9 @@ export default function SiteHeader() {
                     }}
                   />
                   <Box>
-                    {menuConfig.navLinks.map((link) => (
+                    {DefaultLayout.pages.map((link) => (
                       <LinkBox
+                        key={`rs-${link.id}`}
                         as={'div'}
                         display={'flex'}
                         justifyContent={'space-between'}
@@ -137,10 +146,10 @@ export default function SiteHeader() {
                         }}
                       >
                         <LinkOverlay
-                          key={link.id}
                           className="nav-link"
-                          href={link.path}
+                          to={link.path}
                           padding={0}
+                          as={ReactRouterLink}
                         >
                           {link.name}
                         </LinkOverlay>
@@ -164,3 +173,5 @@ export default function SiteHeader() {
   );
 }
 //
+
+export default SiteHeader;
