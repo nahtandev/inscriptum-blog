@@ -11,7 +11,8 @@ const theme = extendTheme({
       'html, body': {
         fontFamily: 'var(--primary-font-family)',
         fontStyle: 'normal',
-        color: 'var(--primary-color)'
+        color: 'var(--primary-color)',
+        fontWeight: '400'
       },
       a: {},
     },
