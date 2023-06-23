@@ -100,4 +100,4 @@ export default function FeaturedArticle() {
       </Box>
     </LinkBox>
   );
-}
+} 

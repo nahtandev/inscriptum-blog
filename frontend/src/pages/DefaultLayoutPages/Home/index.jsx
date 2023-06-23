@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { Box, Center, Flex, VStack, Divider, Text } from '@chakra-ui/react';
+import PostList from 'components/common/PostList/index';
 import Spacer from 'components/common/Spacer';
 import HomeFeaturedArticle from 'components/DefaultLayoutComponent/FeaturedArticle';
 
@@ -34,13 +35,25 @@ export default function Home() {
         Editor’s Picks
       </Text>
       <Divider
-        width={{ xl: '190px', lg: '160px', md: '150px', sm: '135px', base: '100px' }}
+        width={{
+          xl: '190px',
+          lg: '160px',
+          md: '150px',
+          sm: '135px',
+          base: '100px',
+        }}
         border={{
           md: '3px solid var(--primary-color)',
           base: '2px solid var(--primary-color)',
         }}
         opacity="1"
       />
+
+      <Spacer />
+
+      <PostList />
+
+      <Spacer />
     </Flex>
   );
 }
