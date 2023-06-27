@@ -11,16 +11,18 @@ export default function PostItemMetadata({
     author: 'John Doe',
     createdAt: 'January 5, 1977',
     excerpt: `  Proident aliquip velit qui commodo officia qui consectetur dolor
-    ullamco aliquip elit incididunt. Ea minim ex consectetur excepteur. Ex
-    laborum nostrud mollit sint consectetur Lorem amet aliqua do enim.
-    Commodo duis dolor anim excepteur. `,
+  ullamco aliquip elit incididunt. Ea minim ex consectetur excepteur. Ex
+  laborum nostrud mollit sint consectetur Lorem amet aliqua do enim.
+  Commodo duis dolor anim excepteur. `,
     timeToRead: '9 mins',
-    link: '#',
   },
   wrapperStyle = {
     width: { base: '', sm: '', md: '', lg: '', xl: '50%' },
     height: { base: '', sm: '', md: '', lg: '', xl: '' },
     padding: { xl: '', lg: '', md: '', sm: '', base: '' },
+    top: { base: '', sm: '', md: '', lg: '', xl: '' },
+    left: { base: '', sm: '', md: '', lg: '', xl: '' },
+    right: { base: '', sm: '', md: '', lg: '', xl: '' },
     background: 'none',
   },
   tagsStyle = {
@@ -35,14 +37,13 @@ export default function PostItemMetadata({
     fontSize: { lg: '25px', xl: '33px', md: '20px', sm: '18px', base: '15px' },
     lineHeight: { lg: '30px', xl: '41px', md: '25px', sm: '20px' },
   },
+  isFeaturedPost = false,
 }) {
   return (
-    <LinkBox
+    <Box
       className="post-item-meta-wrapper"
-      backgroundColor={wrapperStyle.background}
-      height={wrapperStyle.height}
-      width={wrapperStyle.width}
-      padding={wrapperStyle.padding}
+      {...wrapperStyle}
+      position={isFeaturedPost && 'relative'}
     >
       <Text
         className="post-item-tags"
@@ -54,16 +55,15 @@ export default function PostItemMetadata({
       >
         {data.tags}
       </Text>
-      <LinkOverlay
-        className="title"
-        href={data.link}
+      <Text
+        // className="title"
         fontFamily="var(--secondary-font-family)"
         fontWeight={titleStyle.fontWeight}
         fontSize={titleStyle.fontSize}
         lineHeight={titleStyle.lineHeight}
       >
         {data.title}
-      </LinkOverlay>
+      </Text>
       <Flex
         color="rgba(28, 28, 28, 0.5)"
         fontSize={{ xl: '16px', sm: '15px', base: '13px' }}
@@ -102,6 +102,6 @@ export default function PostItemMetadata({
       >
         {data.excerpt}
       </Text>
-    </LinkBox>
+    </Box>
   );
 }
