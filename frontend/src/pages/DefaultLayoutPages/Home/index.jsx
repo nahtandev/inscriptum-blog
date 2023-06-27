@@ -26,6 +26,7 @@ export default function Home() {
         postData={{
           tags: 'Featured Article',
           title: 'World’s Most Dangerous Technology Ever Made.',
+          link: '#first-link',
           author: 'Ralph Hawkins',
           createdAt: 'May 7, 2019',
           excerpt: `Proident aliquip velit qui commodo officia qui consectetur dolor
