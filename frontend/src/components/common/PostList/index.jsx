@@ -15,7 +15,6 @@ export default function PostList({
     <VStack
       {...wrapperStyle}
       className="post-list-wrapper"
-      {...postItemWrapperStyle}
     >
       {postData.map((post) => {
         return (
@@ -24,6 +23,7 @@ export default function PostList({
               //   backgroundColor="blue.100"
               key={post.id}
               className="post-item-wrapper"
+              {...postItemWrapperStyle}
             >
               <LinkOverlay
                 display="flex"
