@@ -9,9 +9,14 @@ export default function PostList({
   wrapperStyle = {},
   thumbnailStyle = {},
   metaDataWrapperStyle = {},
+  postItemWrapperStyle = {},
 }) {
   return (
-    <VStack {...wrapperStyle} className="post-list-wrapper">
+    <VStack
+      {...wrapperStyle}
+      className="post-list-wrapper"
+      {...postItemWrapperStyle}
+    >
       {postData.map((post) => {
         return (
           <>
