@@ -1,25 +1,30 @@
 /* eslint-disable no-unused-vars */
 import { Box, Image } from '@chakra-ui/react';
-import postThumbnail from 'assets/images/temp/post-thumbnail.png';
 import { Link as RouterLink } from 'react-router-dom';
 export default function PostThumbnail({
   src = 'https://via.placeholder.com/500',
   alt = 'Lorem Ipsum Post Thumbnail',
   postLink = '#',
-  height = '100%',
-  width = '100%',
-  margin = {},
+  wrapperStyle = {},
+  imgStyle = {},
 }) {
+  const defaultWrapperStyle = {
+    height: '100%',
+    width: '100%',
+  };
+  const defaultImgStyle = {
+    width: '100%',
+    height: '100%',
+  };
   return (
-    <Box width={width} height={height}>
+    <Box {...defaultWrapperStyle} {...wrapperStyle}>
       <Image
-        width="100%"
-        height="100%"
-        margin={margin}
-        src={postThumbnail}
+        objectFit={'cover'}
+        {...defaultImgStyle}
+        {...imgStyle}
+        src={src}
         alt={alt}
         fallbackSrc="https://via.placeholder.com/500"
-        objectFit="cover"
       />
     </Box>
   );

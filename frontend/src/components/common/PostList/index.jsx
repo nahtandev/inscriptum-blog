@@ -12,10 +12,7 @@ export default function PostList({
   postItemWrapperStyle = {},
 }) {
   return (
-    <VStack
-      {...wrapperStyle}
-      className="post-list-wrapper"
-    >
+    <VStack {...wrapperStyle} className="post-list-wrapper">
       {postData.map((post) => {
         return (
           <>
@@ -27,15 +24,27 @@ export default function PostList({
             >
               <LinkOverlay
                 display="flex"
-                href="#"
+                href={post.link}
                 width="100%"
                 height="100%"
                 justifyContent="space-between"
                 alignItems="center"
                 flexWrap="wrap"
               >
-                <PostThumbnail {...thumbnailStyle} />
-                <PostItemMetadata wrapperStyle={{ ...metaDataWrapperStyle }} />
+                <PostThumbnail
+                  imgStyle={{}}
+                  src={post.cover}
+                  wrapperStyle={thumbnailStyle}
+                />
+                <PostItemMetadata
+                  data={{ ...post }}
+                  wrapperStyle={{ ...metaDataWrapperStyle }}
+                  tagsStyle={
+                    metaDataWrapperStyle.tagsStyle && {
+                      ...metaDataWrapperStyle.tagsStyle,
+                    }
+                  }
+                />
               </LinkOverlay>
             </LinkBox>
             <Spacer />

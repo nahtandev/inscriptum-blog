@@ -25,13 +25,7 @@ export default function PostItemMetadata({
     right: { base: '', sm: '', md: '', lg: '', xl: '' },
     background: 'none',
   },
-  tagsStyle = {
-    margin: '0 0 10px 0',
-    color: 'rgba(28, 28, 28, 0.5)',
-    textTransform: 'uppercase',
-    fontSize: { xl: '20px', lg: '18px', md: '16px', base: '15px' },
-    lineHeight: { xl: '27px', md: '20px', sm: '18px', base: '10px' },
-  },
+  tagsStyle = {},
   titleStyle = {
     fontWeight: '700',
     fontSize: { lg: '25px', xl: '33px', md: '20px', sm: '18px', base: '15px' },
@@ -39,20 +33,21 @@ export default function PostItemMetadata({
   },
   isFeaturedPost = false,
 }) {
+  const defaultTagsStyle = {
+    margin: '0 0 10px 0',
+    color: 'rgba(28, 28, 28, 0.5)',
+    textTransform: 'uppercase',
+    fontSize: { xl: '20px', lg: '18px', md: '16px', base: '15px' },
+    lineHeight: { xl: '27px', md: '20px', sm: '18px', base: '10px' },
+  };
+
   return (
     <Box
       className="post-item-meta-wrapper"
       {...wrapperStyle}
       position={isFeaturedPost && 'relative'}
     >
-      <Text
-        className="post-item-tags"
-        fontSize={tagsStyle.fontSize}
-        lineHeight={tagsStyle.lineHeight}
-        color={tagsStyle.color}
-        textTransform={tagsStyle.textTransform}
-        margin={tagsStyle.margin}
-      >
+      <Text className="post-item-tags" {...defaultTagsStyle} {...tagsStyle}>
         {data.tags}
       </Text>
       <Text
@@ -92,7 +87,7 @@ export default function PostItemMetadata({
           fontSize={{ sm: '12px', xl: '14px', base: '10px' }}
           lineHeight="19px"
         >
-          ({data.timeToRead} read)
+          {data.timeToRead && `${data.timeToRead} read`}
         </Text>
       </Flex>
       <Text

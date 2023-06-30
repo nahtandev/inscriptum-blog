@@ -28,11 +28,13 @@ import {
   Center,
   LinkBox,
   LinkOverlay,
+  Text,
 } from '@chakra-ui/react';
 import { HamburgerIcon, ChevronRightIcon, CloseIcon } from '@chakra-ui/icons';
 import { Link as ReactRouterLink } from 'react-router-dom';
 import { useRef } from 'react';
 import { routesConfig } from '../../../config';
+import { hotTagsList } from 'placeholder';
 
 function SiteHeader() {
   const DefaultLayout = routesConfig[0];
@@ -108,7 +110,7 @@ function SiteHeader() {
               onClose={onClose}
               isOpen={isOpen}
               finalFocusRef={btnRef}
-              onEsc={true}
+              onEsc={onClose}
             >
               <DrawerOverlay />
               <DrawerContent>
@@ -158,6 +160,33 @@ function SiteHeader() {
                         <ChevronRightIcon fontSize={'1.5em'} />
                       </LinkBox>
                     ))}
+                  </Box>
+                  <Box
+                    width={{ md: '100%' }}
+                    className="homepage-tags-list"
+                  >
+                    <Text
+                      fontWeight={{ md: '700' }}
+                      fontSize={{ md: '20px' }}
+                      mb={{ md: '5px' }}
+                    >
+                      tags.
+                    </Text>
+
+                    <Box>
+                      {hotTagsList.map((tags) => (
+                        <LinkBox
+                          fontSize={{ md: '16px' }}
+                          backgroundColor="red.100"
+                          lineHeight={{ md: '45px' }}
+                          mb={{ md: '5px' }}
+                        >
+                          <LinkOverlay href={tags.link}>
+                            {tags.name}
+                          </LinkOverlay>
+                        </LinkBox>
+                      ))}
+                    </Box>
                   </Box>
                 </DrawerBody>
               </DrawerContent>
