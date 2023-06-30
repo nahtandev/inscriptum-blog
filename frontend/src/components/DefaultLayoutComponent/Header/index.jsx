@@ -161,33 +161,6 @@ function SiteHeader() {
                       </LinkBox>
                     ))}
                   </Box>
-                  <Box
-                    width={{ md: '100%' }}
-                    className="homepage-tags-list"
-                  >
-                    <Text
-                      fontWeight={{ md: '700' }}
-                      fontSize={{ md: '20px' }}
-                      mb={{ md: '5px' }}
-                    >
-                      tags.
-                    </Text>
-
-                    <Box>
-                      {hotTagsList.map((tags) => (
-                        <LinkBox
-                          fontSize={{ md: '16px' }}
-                          backgroundColor="red.100"
-                          lineHeight={{ md: '45px' }}
-                          mb={{ md: '5px' }}
-                        >
-                          <LinkOverlay href={tags.link}>
-                            {tags.name}
-                          </LinkOverlay>
-                        </LinkBox>
-                      ))}
-                    </Box>
-                  </Box>
                 </DrawerBody>
               </DrawerContent>
             </Drawer>
